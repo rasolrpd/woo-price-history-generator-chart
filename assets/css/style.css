@@ -1,0 +1,71 @@
+
+.price-history-chart-wrapper {
+    direction: ltr !important;
+    overflow-x: auto;
+}
+/* کانتینر اصلی - حذف پدینگ اضافی */
+.price-history-chart-wrapper {
+    width: 100%;
+    overflow-x: scroll;
+    max-height: 500px;
+    min-height: 350px;
+    height: min-content;
+}
+
+/* بخش داخلی نمودار - تنظیم ارتفاع بهینه */
+.price-history-chart-inner {
+    height: 400px !important;
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 1400px;
+    overflow-x: auto;
+    max-width: 5000px;
+    min-width: 1100px;
+    }
+
+/* تنظیمات کانواس */
+#priceHistoryChart {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* بهینه‌سازی برای موبایل */
+@media (max-width: 768px) {
+    .price-history-chart-inner {
+        min-width: 1200px; /* روی موبایل خیلی عریض نباشد که اسکرول اذیت کند */
+        position: relative; 
+        top:-40px;
+        min-height: 450px;
+        max-height: 700px;
+        
+    }
+}
+
+/* فونت سفارشی */
+@font-face {
+    font-family: 'EstedadChart';
+    src: url('https://iripaksam.ir/wp-content/uploads/2025/02/Estedad-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* حذف فواصل اختصاصی تب‌های وودمارت و ووکامرس */
+.woocommerce-Tabs-panel, 
+.wd-tab-content,
+.wd-tab-content-inner,
+.entry-content {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* اگر عنوان "نمودار تغییر قیمت" تگ h3 یا h4 است، فاصله‌اش را کم می‌کنیم */
+.price-history-chart-wrapper + h2, 
+.price-history-chart-wrapper + h3,
+h2:has(+ .price-history-chart-wrapper),
+h3:has(+ .price-history-chart-wrapper) {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
